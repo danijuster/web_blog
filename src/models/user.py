@@ -1,5 +1,5 @@
 import uuid
-from datetime import datetime
+import datetime
 
 from flask import session
 
@@ -51,7 +51,7 @@ class User(object):
         session['email'] = user_email
 
     @staticmethod
-    def login(user_email):
+    def logout(user_email):
         # login_valid has already been called
         session['email'] = None
 
