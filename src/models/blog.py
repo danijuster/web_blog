@@ -31,7 +31,7 @@ class Blog(object):
     def json(self):
         return {
             'author': self.author,
-            'suthor_id': self.author_id,
+            'author_id': self.author_id,
             'title': self.title,
             'description': self.description,
             '_id': self._id
@@ -46,5 +46,5 @@ class Blog(object):
     @classmethod
     def find_by_author_id(cls, author_id):
         blogs = Database.find(collection='blogs',
-                              query={'author_id': author_id})
+                              query={'author_id': str(author_id)})
         return [cls(**blog) for blog in blogs]
